@@ -10,6 +10,8 @@ import { Layout354Final } from './components/Layout354Final'
 import { HeaderFinal } from './components/HeaderFinal'
 import { Blog43 } from './components/Blog43'
 import { Footer4 } from './components/Footer4'
+import { Header80 } from './components/Header80'
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
       <Navbar2 />
       <Header7 />
       <Layout354 />
+      <Header80 />
 
       <Layout355 />
 
