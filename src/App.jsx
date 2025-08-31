@@ -11,6 +11,8 @@ import { HeaderFinal } from './components/HeaderFinal'
 import { Blog43 } from './components/Blog43'
 import { Footer4 } from './components/Footer4'
 import { Header80 } from './components/Header80'
+import { HeaderZoomIn } from './components/HeaderZoomIn'
+import { Layout348 } from './components/Layout348'
 
 
 function App() {
@@ -22,10 +24,12 @@ function App() {
       <Header80 />
 
       <Layout355 />
+      <HeaderZoomIn />
 
       <Header33New />
       <Layout354Final />
       <HeaderFinal />
+      <Layout348 />
       <Blog43 />
       <Footer4 />
     </div>

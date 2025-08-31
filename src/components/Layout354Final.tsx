@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 
@@ -72,7 +73,7 @@ export const Layout354FinalDefaults: Props = {
   featureSections: [
     {
       image: {
-        src: "http://localhost:3845/assets/f83aefda4fcaa0a98985f08523b8407a6849bf84.png",
+        src: "/images/Gemini_Generated_Image_52o7hd52o7hd52o7.png",
         alt: "Car slowing down",
       },
       heading: "The car slows, and the noise fades",
@@ -81,7 +82,7 @@ export const Layout354FinalDefaults: Props = {
     },
     {
       image: {
-        src: "http://localhost:3845/assets/123598581007b9dfa52e07bb013d8c8f0bf3cf1b.png",
+        src: "/images/Gemini_Generated_Image_7czxx87czxx87czx.png",
         alt: "Getting out of the car",
       },
       heading: "You get out, and the world rushes back in",
@@ -90,7 +91,7 @@ export const Layout354FinalDefaults: Props = {
     },
     {
       image: {
-        src: "http://localhost:3845/assets/92f0e227c66e6c324822257631726354253695b0.png",
+        src: "/images/Gemini_Generated_Image_slfx54slfx54slfx.png",
         alt: "Exhaustion after race",
       },
       heading: "My body is an empty vessel now, filled only with a deep, consuming exhaustion",
@@ -99,7 +100,7 @@ export const Layout354FinalDefaults: Props = {
     },
     {
       image: {
-        src: "http://localhost:3845/assets/92f0e227c66e6c324822257631726354253695b0.png",
+        src: "/images/Temp image.jpg",
         alt: "Reward for suffering",
       },
       heading: "It is a reward for the suffering, a promise for the future.",

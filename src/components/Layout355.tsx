@@ -92,6 +92,6 @@ export const Layout355Defaults: Props = {
       description: "",
     },
   ],
-  video: "/A_highspeed_nascar_202508301804_ppot5.mp4",
+  video: "/We_are_inside_202508310149.mp4",
   videoType: "video/mp4",
 };
