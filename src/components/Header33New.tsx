@@ -49,6 +49,6 @@ export const Header33NewDefaults: Props = {
   heading: "The taste of victory",
   description: "",
   buttons: [],
-  video: "https://d22po4pjz3o32e.cloudfront.net/placeholder-video.mp4",
+  video: "/victory.mp4",
   videoType: "video/mp4",
 };

@@ -1,6 +1,6 @@
 "use client";
 
-
+import React from "react";
 import clsx from "clsx";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
@@ -52,14 +52,22 @@ export const HeaderZoomIn = (props: HeaderZoomInProps) => {
                   [0, 2, 3, 5, 6, 8].indexOf(index) !== -1 && "hidden md:block",
                 )}
               >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className={clsx(
-                    "absolute inset-0 size-full object-cover",
-                    index === 4 ? "opacity-100" : "opacity-0"
-                  )}
-                />
+                {index === 4 ? (
+                  <video
+                    src="/A_highspeed_nascar_202508301804_ppot5.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 size-full object-cover opacity-100"
+                  />
+                ) : (
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="absolute inset-0 size-full object-cover opacity-0"
+                  />
+                )}
               </div>
             ))}
           </motion.div>

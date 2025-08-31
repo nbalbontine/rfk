@@ -29,10 +29,19 @@ export const Header80 = (props: Header80Props) => {
   });
   // Reverse the original animation: start zoomed in, zoom out to show all images
   const yFirst = useTransform(animatedScrollYProgress, [0, 0.8], ["-300vh", "100vh"]);
-  const ySecond = useTransform(animatedScrollYProgress, [0, 0.8], ["-250vh", "100vh"]);
 
   return (
-    <section id="relume" ref={transformRef} className="relative h-[250vh] px-[5%] md:h-[350vh]">
+    <section 
+      id="relume" 
+      ref={transformRef} 
+      className="relative h-[250vh] px-[5%] md:h-[350vh]"
+      style={{
+        backgroundImage: "url('/images/pavement_long..jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat"
+      }}
+    >
       <div className="sticky top-0 h-screen overflow-hidden">
         <div className="absolute bottom-0 left-0 right-auto top-0 z-10">
           <motion.div className="flex flex-col gap-[20vw] pt-[0vh]" style={{ y: yFirst }}>
@@ -49,36 +58,14 @@ export const Header80 = (props: Header80Props) => {
               >
                 <img
                   src={image.src}
-                  className={`absolute inset-0 size-full ${index === 2 || index === 3 ? 'object-contain' : 'object-cover'}`}
+                  className={`absolute inset-0 size-full object-contain`}
                   alt={image.alt}
                 />
               </div>
             ))}
           </motion.div>
         </div>
-        <motion.div
-          className="absolute bottom-0 left-auto right-0 top-0 z-0"
-          style={{ y: ySecond }}
-        >
-          <div className="flex flex-col gap-[20vw] pt-[0vh]">
-            {images.slice(4).map((image, index) => (
-              <div
-                key={index}
-                className={clsx("relative h-[30vw] pt-[120%] opacity-75 sm:h-auto", {
-                  "w-[22vw] md:w-[20vw] lg:w-[14vw] right-[40vw] md:right-[45vw] lg:right-[50vw]": index === 0,
-                  "right-[25vw] mt-[-35vw] w-[20vw] md:w-[18vw] lg:right-[30vw] lg:w-[12vw]":
-                    index === 1,
-                })}
-              >
-                <img
-                  src={image.src}
-                  className="absolute inset-0 size-full object-cover"
-                  alt={image.alt}
-                />
-              </div>
-            ))}
-          </div>
-        </motion.div>
+
 
         <div className="absolute inset-0 -z-10 mt-[35rem] md:mt-[100vh]" />
       </div>
@@ -89,12 +76,12 @@ export const Header80 = (props: Header80Props) => {
 export const Header80Defaults: Props = {
   images: [
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 1",
+      src: "/images/auto3.png",
+      alt: "Race car 3",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 2",
+      src: "/images/auto2.png",
+      alt: "Race car 2",
     },
     {
       src: "/images/auto1.png",
@@ -103,14 +90,6 @@ export const Header80Defaults: Props = {
     {
       src: "/images/yellow2.png",
       alt: "Yellow race car",
-    },
-    {
-      src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 5",
-    },
-    {
-      src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 6",
     },
   ],
 };

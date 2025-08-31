@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 
@@ -17,8 +17,41 @@ export const CarsPassingBy = (props: CarsPassingByProps) => {
     ...CarsPassingByDefaults,
     ...props,
   };
+  
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const videoElement = videoRef.current;
+    const sectionElement = sectionRef.current;
+    
+    if (!videoElement || !sectionElement) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            videoElement.play().catch((error) => {
+              console.log("Video autoplay failed:", error);
+            });
+          } else {
+            videoElement.pause();
+          }
+        });
+      },
+      {
+        threshold: 0.25, // Start playing when 25% of the component is visible
+      }
+    );
+
+    observer.observe(sectionElement);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
   return (
-    <section id="relume" className="relative px-[5%]">
+    <section ref={sectionRef} id="relume" className="relative px-[5%]">
       <div className="container relative z-10 max-w-lg">
         <div className="flex max-h-[60rem] min-h-svh items-center py-16 md:py-24 lg:py-28">
           <div className="text-center">
@@ -43,7 +76,13 @@ export const CarsPassingBy = (props: CarsPassingByProps) => {
         </div>
       </div>
       <div className="absolute inset-0 z-0">
-        <video className="absolute inset-0 aspect-video size-full object-cover" autoPlay loop muted>
+        <video 
+          ref={videoRef}
+          className="absolute inset-0 aspect-video size-full object-cover" 
+          loop 
+          muted
+          playsInline
+        >
           <source src={video} type={videoType} />
         </video>
       </div>
