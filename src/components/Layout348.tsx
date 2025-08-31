@@ -94,7 +94,7 @@ export const Layout348 = (props: Layout348Props) => {
   }, [contents.length, activeSection]);
 
   return (
-    <section id="relume" className="bg-gray-900">
+    <section id="relume" style={{ backgroundColor: '#1B1C1D' }}>
       <div className="relative grid md:grid-cols-2 md:py-0">
         <div className="sticky top-0 hidden h-screen md:flex md:flex-col md:items-center md:justify-center overflow-hidden">
             {images.map((image, index) => {
@@ -149,11 +149,14 @@ export const Layout348 = (props: Layout348Props) => {
             />
           </div>
 
-          <div className="grid grid-cols-1 gap-12 md:block px-[5%] py-16">
+          <div className="grid grid-cols-1 gap-12 md:block px-[5%] py-16 md:pl-16">
             {contents.map((content, index) => (
               <div key={index} data-section-index={index}>
                 <div className="flex flex-col items-start justify-center md:h-screen">
-                  <h2 className="rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl text-white">
+                  <h2 className={clsx(
+                    "rb-5 mb-5 font-bold md:mb-6 text-white whitespace-pre-line",
+                    index === 0 ? "text-[40px]" : index === 1 ? "text-[40px]" : index === 2 ? "text-[40px]" : "text-5xl md:text-7xl lg:text-8xl"
+                  )}>
                     {content.heading}
                   </h2>
                   <p className="md:text-md text-gray-200 leading-relaxed">
@@ -181,15 +184,8 @@ export const Layout348 = (props: Layout348Props) => {
         
         {/* Background color transition */}
         <div
-          className={clsx(
-            "fixed inset-0 -z-10 transition-all duration-700 ease-out",
-            {
-              "bg-gray-900": activeSection === 0,
-              "bg-slate-900": activeSection === 1,
-              "bg-gray-800": activeSection === 2,
-              "bg-neutral-900": activeSection === 3,
-            }
-          )}
+          className="fixed inset-0 -z-10 transition-all duration-700 ease-out"
+          style={{ backgroundColor: '#1B1C1D' }}
         />
       </section>
   );
@@ -198,7 +194,7 @@ export const Layout348 = (props: Layout348Props) => {
 export const Layout348Defaults: Props = {
   contents: [
     {
-      heading: "The engine screams, a thousand angry voices",
+      heading: "The engine screams,\na thousand angry voices",
       description:
         "The world disappears. Noise, crowd, fear. Gone. It's just me. The machine.",
       image: {
@@ -224,15 +220,6 @@ export const Layout348Defaults: Props = {
         alt: "RFK Racing Legacy",
       },
     },
-    {
-      heading: "Next Generation Racing",
-      description:
-        "Leading the evolution of motorsports with advanced technology, sustainable practices, and a vision for the future of competitive racing.",
-      image: {
-        src: "/images/Temp image.jpg",
-        alt: "RFK Racing Future",
-      },
-    },
   ],
   images: [
     {
@@ -246,10 +233,6 @@ export const Layout348Defaults: Props = {
     {
       src: "/Wheel_driver.mp4",
       alt: "RFK Racing Legacy",
-    },
-    {
-      src: "/images/Temp image.jpg",
-      alt: "RFK Racing Future",
     },
   ],
 };

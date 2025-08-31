@@ -107,10 +107,10 @@ export const Layout354 = (props: Layout354Props) => {
             <div className="relative px-[5%] z-10">
               <div className="container">
                 <div className={`flex min-h-screen flex-col justify-center text-text-alternative ${
-                  isRightAligned ? 'items-end' : 'items-start'
+                  index === 0 ? 'items-center' : 'items-start'
                 }`}>
                   <div className="max-w-md text-left">
-                    <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
+                    <h2 className={`mb-5 font-bold md:mb-6 ${index === 0 || index === 1 || index === 2 ? 'text-[40px] whitespace-pre-line' : 'text-5xl md:text-7xl lg:text-8xl'}`}>
                       {section.heading}
                     </h2>
                     <p className="md:text-md">{section.description}</p>
@@ -139,7 +139,7 @@ export const Layout354Defaults: Props = {
         src: "/images/Gemini_Generated_Image_slfx54slfx54slfx.png",
         alt: "Racing track at night",
       },
-      heading: "The night before, the track is empty",
+      heading: "The night before,\nthe track is empty",
       description: "Just a black ribbon under the stars",
       buttons: [],
     },

@@ -43,13 +43,13 @@ export const Header80 = (props: Header80Props) => {
                   "w-[24vw] md:w-[22vw] lg:w-[16vw] left-[15vw] md:left-[20vw] lg:left-[25vw]": index === 0,
                   "left-[45vw] mt-[-35vw] w-[24vw] md:w-[22vw] lg:left-[50vw] lg:w-[16vw]":
                     index === 1,
-                  "left-[20vw] mt-[-15vw] w-[22vw] md:w-[20vw] lg:w-[14vw]": index === 2,
-                  "left-[55vw] mt-[-30vw] w-[20vw] md:w-[18vw] lg:w-[12vw]": index === 3,
+                  "left-[20vw] mt-[-15vw] w-[35vw] md:w-[30vw] lg:w-[25vw]": index === 2,
+                  "left-[50vw] mt-[-30vw] w-[35vw] md:w-[30vw] lg:w-[25vw]": index === 3,
                 })}
               >
                 <img
                   src={image.src}
-                  className="absolute inset-0 size-full object-cover"
+                  className={`absolute inset-0 size-full ${index === 2 || index === 3 ? 'object-contain' : 'object-cover'}`}
                   alt={image.alt}
                 />
               </div>
@@ -97,12 +97,12 @@ export const Header80Defaults: Props = {
       alt: "Relume placeholder image 2",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 3",
+      src: "/images/auto1.png",
+      alt: "Blue race car",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 4",
+      src: "/images/yellow2.png",
+      alt: "Yellow race car",
     },
     {
       src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
