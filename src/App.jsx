@@ -21,6 +21,7 @@ function App() {
       <Navbar2 />
       <Header7 />
       <Layout354 />
+      <Layout348 />
       <Header80 />
 
       <Layout355 />
@@ -29,7 +30,6 @@ function App() {
       <Header33New />
       <Layout354Final />
       <HeaderFinal />
-      <Layout348 />
       <Blog43 />
       <Footer4 />
     </div>
