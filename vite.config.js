@@ -7,5 +7,22 @@ export default defineConfig({
   server: {
     port: 3000,
     host: true
+  },
+  build: {
+    chunkSizeWarningLimit: 1000, // Increase limit to 1MB
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Vendor chunk for large UI libraries
+          'vendor-ui': ['@relume_io/relume-ui', '@relume_io/relume-tailwind'],
+          // Animation libraries
+          'vendor-motion': ['framer-motion'],
+          // React core
+          'vendor-react': ['react', 'react-dom'],
+          // Icons
+          'vendor-icons': ['react-icons']
+        }
+      }
+    }
   }
 })
