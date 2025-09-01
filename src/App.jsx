@@ -15,6 +15,7 @@ const Layout355 = lazy(() => import('./components/Layout355').then(m => ({ defau
 const HeaderZoomIn = lazy(() => import('./components/HeaderZoomIn').then(m => ({ default: m.HeaderZoomIn })))
 const Header33New = lazy(() => import('./components/Header33New').then(m => ({ default: m.Header33New })))
 const HeaderFinal = lazy(() => import('./components/HeaderFinal').then(m => ({ default: m.HeaderFinal })))
+const Blog44 = lazy(() => import('./components/Blog44').then(m => ({ default: m.Blog44 })))
 
 // Component loading fallback
 const ComponentLoader = () => (
@@ -63,6 +64,10 @@ function AppContent() {
       
       <Suspense fallback={<ComponentLoader />}>
         <HeaderFinal />
+      </Suspense>
+      
+      <Suspense fallback={<ComponentLoader />}>
+        <Blog44 />
       </Suspense>
     </div>
   );
