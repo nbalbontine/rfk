@@ -48,7 +48,7 @@ export const Blog44 = (props: Blog44Props) => {
               className="flex flex-1 flex-col overflow-hidden rounded-2xl bg-white shadow-[0px_4px_8px_-2px_rgba(0,0,0,0.1),0px_2px_4px_-2px_rgba(0,0,0,0.06)] border border-[lightgrey] transition-transform duration-200 ease-in-out hover:scale-[1.02] cursor-pointer"
             >
               <div 
-                className="aspect-[405.333/270] bg-cover bg-center bg-no-repeat"
+                className="aspect-[405.333/270] bg-cover bg-center bg-no-repeat bg-gray-200"
                 style={{ backgroundImage: `url('${post.image.src}')` }}
               />
               <div className="flex flex-1 flex-col justify-between p-6">
@@ -84,7 +84,7 @@ export const Blog44Defaults: Props = {
     {
       url: "https://heavyindustry.trimble.com/resources/customer-stories/on-the-banks-of-atlanta-motor-speedway-technique-and-technology-combine-to-produce-nascar-smooth-surfaces?_gl=1*15w1kx0*_gcl_au*MjMwMTgyNzg4LjE3NTAxNDQ2MjE.",
       image: {
-        src: "http://localhost:3845/assets/2098f36fa252e25787fbddfb33279143caa1ac06.png",
+        src: "/images/01_blog.jpg",
         alt: "Paving construction site with Atlanta Motor Speedway in background",
       },
       title: "Paving the way to victory",
@@ -94,7 +94,7 @@ export const Blog44Defaults: Props = {
     {
       url: "https://www.trimble.com/en/products/building-construction-field-systems",
       image: {
-        src: "http://localhost:3845/assets/7985db3f7ce3cddc2ed7a1ae0c26a68bc467adca.png",
+        src: "/images/02_blog.jpg",
         alt: "Surveying equipment at Darlington Raceway",
       },
       title: "Safety comes first",
@@ -104,7 +104,7 @@ export const Blog44Defaults: Props = {
     {
       url: "https://www.trimble.com/blog/trimble/en-US/article/routing-the-optimal-path-to-high-speed-rail",
       image: {
-        src: "http://localhost:3845/assets/a3261d48a84dd033412403ff66f37ed214a44cb1.png",
+        src: "/images/03_blog.png",
         alt: "High-speed train on railway tracks",
       },
       title: "Setting the speed of success",
