@@ -7,8 +7,6 @@ import { Header33New } from './components/Header33New'
 import { Layout355 } from './components/Layout355'
 
 import { HeaderFinal } from './components/HeaderFinal'
-import { Blog43 } from './components/Blog43'
-import { Footer4 } from './components/Footer4'
 import { Header80 } from './components/Header80'
 import { HeaderZoomIn } from './components/HeaderZoomIn'
 import { Layout348 } from './components/Layout348'
@@ -29,8 +27,6 @@ function App() {
 
       <Header33New />
       <HeaderFinal />
-      <Blog43 />
-      <Footer4 />
     </div>
   )
 }

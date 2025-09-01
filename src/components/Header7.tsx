@@ -41,7 +41,7 @@ export const Header7 = (props: Header7Props) => {
           alt="Background" 
           className="absolute inset-0 size-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/0 via-black/0 to-transparent opacity-0" />
       </div>
     </section>
   );
@@ -52,5 +52,5 @@ export const Header7Defaults: Props = {
   description:
     "Outside, the world is a blur of color and noise.\nInside, its just me and the machine.\nThis is where the story begins.",
   buttons: [],
-  backgroundImage: "/images/trimble_auto.jpg",
+  backgroundImage: "/images/carhero2.jpg",
 };
