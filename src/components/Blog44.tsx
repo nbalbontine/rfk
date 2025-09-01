@@ -38,7 +38,7 @@ export const Blog44 = (props: Blog44Props) => {
             </p>
           </div>
         </div>
-        <div className="flex gap-8">
+        <div className="flex gap-8 max-[850px]:flex-col">
           {blogPosts.map((post, index) => (
             <a
               key={index}
