@@ -1,7 +1,8 @@
 import './App.css'
-import { Suspense, lazy } from 'react'
+import { Suspense, lazy, useEffect } from 'react'
 import { VideoProvider, useVideoContext } from './contexts/VideoContext'
 import { LoadingScreen } from './components/LoadingScreen'
+import { trackPageView } from './utils/analytics'
 
 // Critical above-the-fold components (loaded immediately)
 import { Header7 } from './components/Header7'
@@ -26,6 +27,13 @@ const ComponentLoader = () => (
 
 function AppContent() {
   const { isLoading, progress } = useVideoContext();
+
+  // Track initial page view when app loads
+  useEffect(() => {
+    if (!isLoading) {
+      trackPageView('RFK Racing - Home', window.location.pathname);
+    }
+  }, [isLoading]);
 
   if (isLoading) {
     return <LoadingScreen progress={progress} />;

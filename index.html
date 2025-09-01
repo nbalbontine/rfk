@@ -14,7 +14,11 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-M2G18EHY11');
+      gtag('config', 'G-M2G18EHY11', {
+        page_title: 'RFK Racing',
+        page_location: window.location.href,
+        send_page_view: true
+      });
     </script>
   </head>
   <body>
